@@ -1,0 +1,32 @@
+{
+  "name": "aggrego/data-board-component-contract",
+  "type": "library",
+  "description": "",
+  "license": "BSD-3-Clause",
+  "keywords": [],
+  "authors": [
+    {
+      "name": "Tomasz Kunicki"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "aggrego/infrastructure-event-contract": "^0"
+  },
+  "require-dev": {
+    "phpspec/phpspec": "^7.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Aggrego\\Component\\DataBoardComponent\\Contract\\": "src/"
+    },
+    "exclude-from-classmap": [
+      "spec/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "spec\\Aggrego\\Component\\DataBoardComponent\\Contract\\": "spec/"
+    }
+  }
+}

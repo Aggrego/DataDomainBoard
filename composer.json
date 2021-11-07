@@ -1,33 +1,40 @@
 {
-  "name": "aggrego/data-domain-board",
-  "type": "library",
-  "description": "",
-  "license": "BSD-3-Clause",
-  "keywords": [],
-  "authors": [
-    {
-      "name": "Tomasz Kunicki"
-    }
-  ],
-  "require": {
-    "php": ">=7.1",
-    "aggrego/domain": "^0",
-    "timitao/value-object": "^0"
-  },
-  "require-dev": {
-    "phpspec/phpspec": "^5.1"
-  },
-  "autoload": {
-    "psr-4": {
-      "Aggrego\\DataDomainBoard\\": "src/"
+    "name": "aggrego/data-board",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Tomasz Kunicki"
+        }
+    ],
+    "require": {
+        "php": ">=8.0"
     },
-    "exclude-from-classmap": [
-      "spec/"
-    ]
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "spec\\Aggrego\\DataDomainBoard\\": "spec/"
+    "require-dev": {
+        "aggrego/core": "dev-master",
+        "phpspec/phpspec": "^7.1",
+        "symplify/monorepo-builder": "^9.4",
+        "wikimedia/composer-merge-plugin": "^2.0"
+    },
+    "autoload": {
+        "exclude-from-classmap": [
+            "packages/Aggrego/Component/DataBoardComponent/Contract/spec/",
+            "packages/Aggrego/Component/DataBoardComponent/CoreDomainPlugin/spec/"
+        ],
+        "psr-4": {
+            "Aggrego\\Component\\DataBoardComponent\\Contract\\": "packages/Aggrego/Component/DataBoardComponent/Contract/src/",
+            "Aggrego\\Component\\DataBoardComponent\\CoreDomainPlugin\\": "packages/Aggrego/Component/DataBoardComponent/CoreDomainPlugin/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "spec\\Aggrego\\Component\\DataBoardComponent\\Contract\\": "packages/Aggrego/Component/DataBoardComponent/Contract/spec/",
+            "spec\\Aggrego\\Component\\DataBoardComponent\\CoreDomainPlugin\\": "packages/Aggrego/Component/DataBoardComponent/CoreDomainPlugin/spec/"
+        }
+    },
+    "replace": {
+        "aggrego/data-board-component-contract": "self.version",
+        "aggrego/data-board-component-core-domain-plugin": "self.version",
+        "aggrego/data-board-deployment": "self.version"
     }
-  }
 }
